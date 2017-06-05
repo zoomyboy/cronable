@@ -1,0 +1,16 @@
+{
+    "name": "zoomyboy/cronable",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Philipp Lang",
+            "email": "pille@zoomyboy.de"
+        }
+    ],
+    "require": {},
+	"autoload": {
+		"psr-4": {
+			"Zoomyboy\\Cronable\\": "src/"
+		}
+	}
+}
