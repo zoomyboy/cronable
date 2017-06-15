@@ -7,7 +7,9 @@
             "email": "pille@zoomyboy.de"
         }
     ],
-    "require": {},
+    "require": {
+		"orchestra/testbench": "~3.4"
+	},
 	"autoload": {
 		"psr-4": {
 			"Zoomyboy\\Cronable\\Tests\\": "tests/",

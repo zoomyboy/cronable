@@ -1,14 +1,9 @@
 <?php
 
-namespace App;
+namespace Zoomyboy\Cronable;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Cronable extends Model
-{
-    public $fillable = ['interval', 'weekday', 'day', 'time'];
-
-	public function cronable() {
-		return $this->morphTo();
+trait Cronable {
+	public function cron() {
+		return $this->morphOne(\Zoomyboy\Cronable\Cron::class, 'cron');
 	}
 }
