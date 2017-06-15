@@ -10,6 +10,7 @@
     "require": {},
 	"autoload": {
 		"psr-4": {
+			"Zoomyboy\\Cronable\\Tests": "tests/",
 			"Zoomyboy\\Cronable\\": "src/"
 		}
 	}
