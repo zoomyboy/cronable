@@ -38,8 +38,8 @@ class Cron extends BaseModel {
 	public static function runSchedule($schedule) {
 		foreach(self::get() as $cron) {
 			$schedule->call(function() {
-				$this->model->runCron($this);
-			})->cron($this->string);
+				$cron->model->runCron($this);
+			})->cron($cron->string);
 		}
 	}
 }
