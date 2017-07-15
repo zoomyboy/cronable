@@ -15,6 +15,7 @@ class Cron extends BaseModel {
 		switch($this->interval) {
 			case 1:
 				//Daily
+				return "* * * * *";
 				return "{$this->minute} {$this->hour} * * *";
 			case 2:
 				//Weekly
@@ -37,8 +38,8 @@ class Cron extends BaseModel {
 
 	public static function runSchedule($schedule) {
 		foreach(self::get() as $cron) {
-			$schedule->call(function() {
-				$cron->model->runCron($this);
+			$schedule->call(function() use ($cron) {
+				$cron->model->runCron($cron);
 			})->cron($cron->string);
 		}
 	}
